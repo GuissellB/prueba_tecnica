@@ -1,0 +1,2 @@
+# Ignore CSV dataset files
+/[Dd]atasets/*.csv
