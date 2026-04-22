@@ -17,7 +17,7 @@ Actualmente el proyecto contiene estos entregables:
 
 ## Entregables pendientes
 
-Segun la estructura esperada que compartiste, estos entregables aun no existen en el repositorio:
+Segun la estructura esperada 
 
 - `bloque3_analisis.*`
 - `bloque3_visualizaciones/`
