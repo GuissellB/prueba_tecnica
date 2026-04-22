@@ -47,23 +47,50 @@ Si ya tienes la carpeta `venv`, solo activala:
 .\venv\Scripts\Activate.ps1
 ```
 
+## Como revisar los entregables
+
+### Notebook del bloque 0
+
+Para revisar `Bloque_0.ipynb`:
+
+1. Activa el entorno virtual.
+2. Asegurate de haber instalado las dependencias con `pip install -r requirements.txt`.
+3. Abre Jupyter desde la raiz del proyecto:
+
+```powershell
+jupyter notebook
+```
+
+Luego abre `Bloque_0.ipynb`.
+
+### Bloque 1
+
+El bloque 1 esta en `Bloque_1.sql`, que contiene las consultas SQL comentadas.
+
+### Bloque 2
+
+Los documentos del bloque 2 disponibles son:
+
+- `bloque2_decisiones.md`
+- `bloque2_modelo.pdf`
+
 ## Configuracion de la base de datos
 
-Antes de ejecutar la carga, crea la base de datos que vayas a usar. Por ejemplo:
+Si quieres ejecutar la carga hacia MySQL:
+
+1. Asegurate de que MySQL este corriendo.
+2. Crea la base de datos que vayas a usar. Por ejemplo:
 
 ```sql
 CREATE DATABASE retail_prueba;
 ```
 
-Luego crea un archivo `.env` en la raiz del proyecto tomando como base `.env.example` y completa tus credenciales de MySQL.
+3. Crea un archivo `.env` en la raiz del proyecto tomando como base `.env.example`.
+4. Completa en ese archivo tus credenciales y el nombre de la base de datos.
 
-## Como correr el codigo
+## Como cargar los datos en MySQL
 
-1. Activa el entorno virtual.
-2. Asegurate de que MySQL este corriendo.
-3. Crea la base de datos que vayas a usar.
-4. Configura el archivo `.env` con tus credenciales y el nombre de esa base.
-5. Ejecuta la carga de datos:
+Con el entorno virtual activado, ejecuta:
 
 ```powershell
 python .\Datasets\base_datos.py
@@ -79,23 +106,6 @@ Ese script carga estas tablas:
 - `transactions`
 - `transaction_items`
 - `store_promotions`
-
-## Como revisar los entregables
-
-Para abrir el notebook del bloque 0:
-
-```powershell
-jupyter notebook
-```
-
-Luego abre `Bloque_0.ipynb`.
-
-El bloque 1 esta en `Bloque_1.sql`, que contiene las consultas SQL comentadas.
-
-Los documentos del bloque 2 disponibles son:
-
-- `bloque2_decisiones.md`
-- `bloque2_modelo.pdf`
 
 ## Notas
 
