@@ -105,3 +105,19 @@ Los documentos del bloque 2 disponibles son:
 - `Datasets/base_datos.py` debe ejecutarse desde la raiz del proyecto.
 - El script de carga usa `if_exists='replace'`, por lo que reemplaza las tablas si ya existen.
 - El README describe el estado actual del repositorio, no una entrega completa final.
+
+## Uso de IA
+
+Utilice Claude como asistente durante el desarrollo de la prueba, principalmente para:
+
+- Interpretar conceptos de negocio: aclarar terminos como GMV, GMROI, Comp Sales, YoY, cohortes y percentil 25 que no eran familiares antes de implementarlos en SQL.
+- Resolver dudas tecnicas puntuales: diferencias de sintaxis entre MySQL y BigQuery, comportamiento de window functions, manejo de `NULL` y tolerancia de redondeo en comparaciones.
+- Validar mi razonamiento: confirmar decisiones de diseno como el modelo cabecera-detalle, el manejo de clientes anonimos y la eleccion de herramientas.
+
+## Lo que hice yo
+
+- Escribi todas las queries SQL.
+- Identifique y corregi errores en mi propio codigo.
+- Tome todas las decisiones de criterio: umbrales, filtros y definiciones de negocio.
+- Valide los resultados contra los datos reales.
+- Redacte el analisis y las conclusiones.
