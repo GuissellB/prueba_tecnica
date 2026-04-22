@@ -1,8 +1,23 @@
 import pandas as pd
+from dotenv import load_dotenv
+import os
 from sqlalchemy import create_engine
 
-# Conectar a MySQL
-engine = create_engine('mysql+pymysql://root:123Queso@localhost/retail_prueba')
+load_dotenv()
+
+db_user = os.getenv('DB_USER')
+db_password = os.getenv('DB_PASSWORD')
+db_host = os.getenv('DB_HOST', 'localhost')
+db_name = os.getenv('DB_NAME')
+
+if not db_user or not db_password or not db_name:
+    raise ValueError(
+        'Faltan variables de entorno para la conexion a MySQL. '
+        'Configura DB_USER, DB_PASSWORD y DB_NAME en el archivo .env.'
+    )
+
+# Conectar a MySQL usando variables de entorno
+engine = create_engine(f'mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}')
 
 # Cargar todos los CSV
 stores            = pd.read_csv('Datasets/stores.csv')

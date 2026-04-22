@@ -12,6 +12,7 @@ Actualmente el proyecto contiene estos entregables:
 - `bloque2_decisiones.md`: decisiones de diseno, ETL y gobernanza.
 - `Datasets/base_datos.py`: script para cargar los CSV en MySQL.
 - `Datasets/*.csv`: archivos fuente necesarios para la carga en MySQL.
+- `.env.example`: ejemplo de variables para la conexion a MySQL.
 - `requirements.txt`: dependencias de Python.
 
 ## Entregables pendientes
@@ -48,26 +49,21 @@ Si ya tienes la carpeta `venv`, solo activala:
 
 ## Configuracion de la base de datos
 
-El script `Datasets/base_datos.py` usa esta conexion:
-
-```python
-mysql+pymysql://root:123Queso@localhost/retail_prueba
-```
-
-Antes de ejecutar la carga, crea la base de datos:
+Antes de ejecutar la carga, crea la base de datos que vayas a usar. Por ejemplo:
 
 ```sql
 CREATE DATABASE retail_prueba;
 ```
 
-Si tus credenciales o el nombre de la base cambian, edita la cadena de conexion en `Datasets/base_datos.py`.
+Luego crea un archivo `.env` en la raiz del proyecto tomando como base `.env.example` y completa tus credenciales de MySQL.
 
 ## Como correr el codigo
 
 1. Activa el entorno virtual.
 2. Asegurate de que MySQL este corriendo.
-3. Crea la base `retail_prueba`.
-4. Ejecuta la carga de datos:
+3. Crea la base de datos que vayas a usar.
+4. Configura el archivo `.env` con tus credenciales y el nombre de esa base.
+5. Ejecuta la carga de datos:
 
 ```powershell
 python .\Datasets\base_datos.py
@@ -105,6 +101,7 @@ Los documentos del bloque 2 disponibles son:
 
 - Los archivos CSV dentro de `Datasets/` estan ignorados en `.gitignore`, por lo que puede que no vengan incluidos al clonar el repositorio.
 - Si los CSV no estan presentes, debes agregarlos manualmente dentro de `Datasets/` antes de ejecutar `Datasets/base_datos.py`.
+- El archivo `.env` tambien esta ignorado en `.gitignore`, por lo que tus credenciales no se suben al repositorio.
 - `Datasets/base_datos.py` debe ejecutarse desde la raiz del proyecto.
 - El script de carga usa `if_exists='replace'`, por lo que reemplaza las tablas si ya existen.
 - El README describe el estado actual del repositorio, no una entrega completa final.
